@@ -1,0 +1,8 @@
+- DEALER CLASS:
+    - The dealer will shuffle the cards using random.shuffle(list)
+    - Cards will be a list
+    - If adding betting functionality, dealer will handle bets
+- PLAYER CLASS:
+    - Player will take a card
+    - Taken cards will be put into a list
+    - Keep track of bets?
