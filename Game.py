@@ -1,6 +1,5 @@
 import random
 
-
 class Dealer:
     def __init__(self, deck):
         self.deck = deck
@@ -9,25 +8,39 @@ class Dealer:
         random.shuffle(self.deck)
         return self.deck.pop(0)
     
+class Player:
+    def __init__(self, name, dealer):
+        self.name = name
+        self.hand = []
+        self.dealer = dealer
+
+    def hit(self):
+        self.hand.append(self.dealer.hand_cards())
+        if self.hand == 'A':
+            value = int(input("Would you like the value of a to be 1 or 11? "))
+            if value == 1:
+                self.hand = 1
+            else:
+                self.hand = 11
+        return self.hand
+    
+    # def stand(self):
+    #     return self.hand
+
+    
 def main():
     letters_dict = {
     'J': 10,
     'Q': 10,
     'K': 10
     }
-
     deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, letters_dict['J'], letters_dict['Q'], letters_dict['K']]
-
         
     dealer = Dealer(deck)
-    my_hand = dealer.hand_cards()
+    player = Player('Juanchi', dealer)
+    print(player.hit())
 
-    if my_hand == 'A':
-        a_value = int(input("Would you like the value of a to be 1 or 11? "))
-        if a_value == 1:
-            my_hand = 1
-        else:
-            my_hand = 11
+
 
 if __name__ == "__main__":
     main()
