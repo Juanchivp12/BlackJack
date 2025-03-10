@@ -16,12 +16,12 @@ class Player:
 
     def hit(self):
         self.hand.append(self.dealer.hand_cards())
-        if self.hand == 'A':
+        if 'A' in self.hand:
             value = int(input("Would you like the value of a to be 1 or 11? "))
             if value == 1:
-                self.hand = 1
+                self.hand.replace('A', 1)
             else:
-                self.hand = 11
+                self.hand.replace('A', 11)
         return self.hand
     
     # def stand(self):
