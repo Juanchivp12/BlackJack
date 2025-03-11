@@ -37,7 +37,8 @@ def main():
     deck = ['A', 2, 3, 4, 5, 6, 7, 8, 9, letters_dict['J'], letters_dict['Q'], letters_dict['K']]
         
     dealer = Dealer(deck)
-    player = Player('Juanchi', dealer)
+    name = input("What is your name? ")
+    player = Player(name, dealer)
     print(player.hit())
 
 
